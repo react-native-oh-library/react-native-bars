@@ -1,0 +1,40 @@
+{
+  "module":{
+    "name":"Bars",
+    "type":"har",
+    "deviceTypes": [
+      "default",
+      "tablet",
+      "2in1"
+    ]
+  }
+}
+
+//{
+//  "module": {
+//    "name": "Bars",
+//    "type": "har",
+//    "description": "$string:module_desc",
+//    "mainElement": "BarsAbility",
+//    "deviceTypes": [
+//      "phone",
+//      "tablet",
+//      "2in1"
+//    ],
+//    "deliveryWithInstall": true,
+//    "installationFree": false,
+//    "pages": "$profile:main_pages",
+//    "abilities": [
+//      {
+//        "name": "BarsAbility",
+//        "srcEntry": "./ets/barsability/BarsAbility.ets",
+//        "description": "$string:BarsAbility_desc",
+//        "icon": "$media:layered_image",
+//        "label": "$string:BarsAbility_label",
+//        "startWindowIcon": "$media:startIcon",
+//        "startWindowBackground": "$color:start_window_background",
+//        "exported": true
+//      }
+//    ]
+//  }
+//}
