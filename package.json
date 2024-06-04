@@ -1,6 +1,6 @@
 {
-  "name": "react-native-bars",
-  "version": "2.4.3",
+  "name": "@react-native-oh-tpl/react-native-bars",
+  "version": "2.4.3-0.0.1",
   "license": "MIT",
   "description": "Components to control your app status and navigation bars.",
   "author": "Mathieu Acthernoene <zoontek@gmail.com>",
@@ -15,7 +15,15 @@
   ],
   "repository": {
     "type": "git",
-    "url": "https://github.com/zoontek/react-native-bars.git"
+    "url": "git://github.com/react-native-oh-library/react-native-bars.git" 
+  },
+  "harmony": {
+    "alias": "react-native-bars",
+   "codegenConfig": {
+      "specPaths": [
+        "./src"
+      ]
+    }
   },
   "keywords": [
     "navigation-bar",
@@ -27,13 +35,14 @@
     "system-bar",
     "system-bars",
     "systembar",
-    "systembars"
+    "systembars",
+    "harmony"
   ],
   "scripts": {
-    "format": "prettier '**/*' -u -w",
+    "format": "prettier '**/*' --ignore-unknown --write",
     "typecheck": "tsc --noEmit",
     "build": "bob build",
-    "prepack": "prettier '**/*' -u -c && yarn typecheck && yarn build"
+    "prepack": "yarn format --write=false --check && yarn typecheck && yarn build"
   },
   "react-native-builder-bob": {
     "source": "src",
@@ -56,11 +65,11 @@
   "devDependencies": {
     "@babel/core": "^7.20.0",
     "@babel/preset-env": "^7.20.0",
-    "@types/react": "^18.2.56",
-    "prettier": "^3.2.5",
+    "@types/react": "^18.2.47",
+    "prettier": "^3.1.1",
     "prettier-plugin-organize-imports": "^3.2.4",
     "react": "18.2.0",
-    "react-native": "0.73.4",
+    "react-native": "0.73.1",
     "react-native-builder-bob": "^0.23.2",
     "typescript": "^5.3.3"
   },
