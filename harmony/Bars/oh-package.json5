@@ -1,12 +1,9 @@
 {
-  "name": "@react-native-oh-tpl/react-native-bars",
-  "version": "4.0.0-0.0.1",
+  "name": "bars",
+  "version": "1.0.0",
   "description": "Please describe the basic information.",
-  "main": "index.ets",
+  "main": "Index.ets",
   "author": "",
   "license": "Apache-2.0",
-  "dependencies": {
-    "@rnoh/react-native-openharmony": 'file:../react_native_openharmony'
-  }
+  "dependencies": {}
 }
-

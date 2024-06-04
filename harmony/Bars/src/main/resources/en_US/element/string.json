@@ -1,16 +1,8 @@
 {
   "string": [
     {
-      "name": "module_desc",
-      "value": "module description"
-    },
-    {
-      "name": "BarsAbility_desc",
-      "value": "description"
-    },
-    {
-      "name": "BarsAbility_label",
-      "value": "label"
+      "name": "page_show",
+      "value": "page from package"
     }
   ]
 }
