@@ -1,4 +1,2 @@
-export { NavigationBar } from "./NavigationBar";
-export { StatusBar } from "./StatusBar";
-export { SystemBars } from "./SystemBars";
+export { SystemBars, NavigationBar, StatusBar } from "react-native-bars";
 export * from "./types";
