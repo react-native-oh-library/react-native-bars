@@ -7,8 +7,8 @@ import window from '@ohos.window';
 import { StatusBarProps } from "./types";
 
 function  createStackEntry(entry: StatusBarProps): StatusBarProps {
-  if(!entry?.statusBarStyle){
-    entry.statusBarStyle = 'light-content'
+  if(!entry?.barStyle){
+    entry.barStyle = 'light-content'
   }
   return entry;
 }
@@ -16,7 +16,7 @@ function  createStackEntry(entry: StatusBarProps): StatusBarProps {
 @Component
 export  struct StatusBar{
   //外界动态修改状态栏颜色实时监听
-  @Prop @Watch("statusBarStyleUpdateCallback") statusBarStyle: string = 'light-content';
+  @Prop @Watch("statusBarStyleUpdateCallback") barStyle: string = 'light-content';
 
   private static propsStack: StatusBarProps[] = [];
   private static timeOut: number | null = null;
@@ -63,7 +63,7 @@ export  struct StatusBar{
 
       if (lastEntry != null) {
         // Update only if style have changed or if current props are unavailable.
-        if (oldProps?.statusBarStyle !== lastEntry.statusBarStyle) {
+        if (oldProps?.barStyle !== lastEntry.barStyle) {
           //todo
           StatusBar.upStatusBar();
         }
@@ -80,12 +80,12 @@ export  struct StatusBar{
   //颜色取值逻辑
   getBarColorByType (): string {
 
-  if(this.statusBarStyle == 'light-content'){
-    this.statusBarStyle =  '#ffffffff';
-  }else if(this.statusBarStyle == 'dark-content'){
-    this.statusBarStyle =  '#ff000000';
+  if(this.barStyle == 'light-content'){
+    this.barStyle =  '#ffffffff';
+  }else if(this.barStyle == 'dark-content'){
+    this.barStyle =  '#ff000000';
   }
-    return  this.statusBarStyle;
+    return  this.barStyle;
   }
 
   //修改状态栏颜色
@@ -105,7 +105,7 @@ export  struct StatusBar{
 
   aboutToAppear() {
     //初始化，执行修改状态栏内容颜色
-    this.stackEntry = StatusBar.pushStackEntry({statusBarStyle: this.statusBarStyle});
+    this.stackEntry = StatusBar.pushStackEntry({barStyle: this.barStyle});
     //处理静态方法获取不到this问题
     StatusBar.target = this;
   }
@@ -122,7 +122,7 @@ export  struct StatusBar{
     if (this.stackEntry) {
       this.stackEntry = StatusBar.replaceStackEntry(
         this.stackEntry,
-        {statusBarStyle: this.statusBarStyle},
+        {barStyle: this.barStyle},
       );
     }
   }

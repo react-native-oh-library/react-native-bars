@@ -5,4 +5,4 @@ export interface NativeProps extends ViewProps {
     barStyle?: string;
  // 添加其它 props
 }
-export default codegenNativeComponent<NativeProps>("NativeSampleView") as HostComponent<NativeProps>;
+export default codegenNativeComponent<NativeProps>("StatusBar") as HostComponent<NativeProps>;

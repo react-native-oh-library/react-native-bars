@@ -8,15 +8,15 @@ import { NavigationBarProps } from "./types";
 
 
 function  createStackEntry(entry: NavigationBarProps): NavigationBarProps {
-  if(!entry?.navigationBarStyle){
-    entry.navigationBarStyle = 'light-content'
+  if(!entry?.barStyle){
+    entry.barStyle = 'light-content'
   }
   return entry;
 }
 @Component
 export  struct NavigationBar{
   //外界动态修改导航栏颜色实时监听
-  @Prop @Watch("navigationBarStyleUpdateCallback") navigationBarStyle: string = 'light-content';
+  @Prop @Watch("navigationBarStyleUpdateCallback") barStyle: string = 'light-content';
 
   private static propsStack: NavigationBarProps[] = [];
   private static timeOut: number | null = null;
@@ -64,7 +64,7 @@ export  struct NavigationBar{
 
       if (lastEntry != null) {
         // Update only if style have changed or if current props are unavailable.
-        if ( oldProps?.navigationBarStyle !== lastEntry.navigationBarStyle) {
+        if ( oldProps?.barStyle !== lastEntry.barStyle) {
          //todo
           NavigationBar.upNavigationBar();
         }
@@ -80,13 +80,13 @@ export  struct NavigationBar{
   //颜色取值逻辑
   getBarColorByType (): string {
 
-    if(this.navigationBarStyle == 'light-content'){
-      this.navigationBarStyle =  '#ffffffff';
-    }else if(this.navigationBarStyle == 'dark-content'){
-      this.navigationBarStyle =  '#ff000000';
+    if(this.barStyle == 'light-content'){
+      this.barStyle =  '#ffffffff';
+    }else if(this.barStyle == 'dark-content'){
+      this.barStyle =  '#ff000000';
     }
 
-    return  this.navigationBarStyle;
+    return  this.barStyle;
   }
 
   //修改导航栏颜色
@@ -102,7 +102,7 @@ export  struct NavigationBar{
   }
 
   aboutToAppear() {
-    this.stackEntry = NavigationBar.pushStackEntry({navigationBarStyle: this.navigationBarStyle});
+    this.stackEntry = NavigationBar.pushStackEntry({barStyle: this.barStyle});
     //处理静态方法获取不到this问题
     NavigationBar.target = this;
   }
@@ -113,7 +113,7 @@ export  struct NavigationBar{
     if (this.stackEntry) {
       this.stackEntry = NavigationBar.replaceStackEntry(
         this.stackEntry,
-        {navigationBarStyle: this.navigationBarStyle},
+        {barStyle: this.barStyle},
       );
     }
   }

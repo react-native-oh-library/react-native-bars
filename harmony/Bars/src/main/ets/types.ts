@@ -1,11 +1,11 @@
 export type SystemBarStyle = "light-content" | "dark-content" | string;
 
 export type StatusBarProps = {
-  statusBarStyle: SystemBarStyle;
+  barStyle: SystemBarStyle;
 };
 
 export type NavigationBarProps = {
-  navigationBarStyle: SystemBarStyle;
+  barStyle: SystemBarStyle;
 };
 
 export type SystemBarsProps = StatusBarProps;

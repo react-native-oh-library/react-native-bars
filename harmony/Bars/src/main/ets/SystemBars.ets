@@ -14,8 +14,8 @@ export  struct SystemBars{
 
   build() {
     Column() {
-      StatusBar({statusBarStyle: this.barStyle })
-      NavigationBar({navigationBarStyle: this.barStyle })
+      StatusBar({barStyle: this.barStyle })
+      NavigationBar({barStyle: this.barStyle })
     }
   }
 }
