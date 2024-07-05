@@ -1,7 +1,7 @@
 import * as React from "react";
 import { Platform, StatusBar as RNStatusBar } from "react-native";
 import NativeModule from "./NativeRNBars";
-import { StatusBarProps } from "./types";
+import { StatusBarProps } from "react-native-bars/src/types";
 
 function createStackEntry({
   animated = false,
@@ -56,9 +56,9 @@ export class StatusBar extends React.Component<StatusBarProps> {
       if (lastEntry != null) {
         // Update only if style have changed or if current props are unavailable.
         if (oldProps?.barStyle !== lastEntry.barStyle) {
-          if (Platform.OS === "android") {
+          if (Platform.OS as string === "harmony") {
             NativeModule?.setStatusBarStyle(lastEntry.barStyle);
-          } else {
+          } else{
             RNStatusBar.setBarStyle(lastEntry.barStyle, lastEntry.animated);
           }
         }
