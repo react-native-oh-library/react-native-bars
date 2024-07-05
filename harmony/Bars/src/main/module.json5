@@ -1,6 +1,6 @@
 {
   "module": {
-    "name": "Bars",
+    "name": "bars",
     "type": "har",
     "deviceTypes": [
       "default",
