@@ -1,0 +1,86 @@
+{
+  "name": "@react-native-oh-tpl/react-native-bars",
+  "version": "2.4.3-0.0.2",
+  "license": "MIT",
+  "description": "Components to control your app status and navigation bars.",
+  "author": "Mathieu Acthernoene <zoontek@gmail.com>",
+  "homepage": "https://github.com/zoontek/react-native-bars",
+  "main": "dist/commonjs/index.js",
+  "module": "dist/module/index.js",
+  "types": "dist/typescript/index.d.ts",
+  "files": [
+    "harmony",
+    "src",
+    "dist"
+  ],
+  "repository": {
+    "type": "git",
+    "url": "git://github.com/react-native-oh-library/react-native-bars.git" 
+  },
+  "harmony": {
+    "alias": "react-native-bars",
+   "codegenConfig": {
+      "specPaths": [
+        "./src"
+      ]
+    }
+  },
+  "keywords": [
+    "navigation-bar",
+    "navigationbar",
+    "react",
+    "react-native",
+    "status-bar",
+    "statusbar",
+    "system-bar",
+    "system-bars",
+    "systembar",
+    "systembars",
+    "harmony"
+  ],
+  "scripts": {
+    "format": "prettier '**/*' --ignore-unknown --write",
+    "typecheck": "tsc --noEmit",
+    "build": "bob build",
+    "prepack": "yarn format --write=false --check && yarn typecheck && yarn build"
+  },
+  "react-native-builder-bob": {
+    "source": "src",
+    "output": "dist",
+    "targets": [
+      "commonjs",
+      "module",
+      "typescript"
+    ]
+  },
+  "prettier": {
+    "plugins": [
+      "prettier-plugin-organize-imports"
+    ]
+  },
+  "peerDependencies": {
+    "react": ">=18.1.0",
+    "react-native": ">=0.70.0",
+    "react-native-bars": "^2.4.3"
+  },
+  "devDependencies": {
+    "@babel/core": "^7.20.0",
+    "@babel/preset-env": "^7.20.0",
+    "@types/react": "^18.2.47",
+    "prettier": "^3.1.1",
+    "prettier-plugin-organize-imports": "^3.2.4",
+    "react": "18.2.0",
+    "react-native": "0.73.1",
+    "react-native-builder-bob": "^0.23.2",
+    "react-native-bars": "^2.4.3",
+    "typescript": "^5.3.3"
+  },
+  "codegenConfig": {
+    "name": "RNBarsSpec",
+    "type": "modules",
+    "jsSrcsDir": "./src",
+    "android": {
+      "javaPackageName": "com.zoontek.rnbars"
+    }
+  }
+}
