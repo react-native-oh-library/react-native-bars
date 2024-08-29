@@ -48,11 +48,8 @@ export class RNBarsTurboModule extends TurboModule implements TM.BarsNativeModul
   public setStatusBarStyle(barStyle): void {
     try {
       window.getLastWindow(getContext(this), (err, w) => {
-        console.info('setStatusBar666'+barStyle)
         w.setWindowSystemBarProperties({
           // 状态栏颜色
-          //   statusBarColor: '#66666666',
-          // 状态栏文字颜色
           statusBarContentColor: this.getBarColorByType(barStyle),
         })
       })
@@ -66,8 +63,6 @@ export class RNBarsTurboModule extends TurboModule implements TM.BarsNativeModul
       window.getLastWindow(getContext(this), (err, w) => {
         w.setWindowSystemBarProperties({
           // 导航栏颜色
-          //   navigationBarColor:'#ff000000',
-          // 导航栏文字颜色
           navigationBarContentColor: this.getBarColorByType(barStyle),
         })
       })
