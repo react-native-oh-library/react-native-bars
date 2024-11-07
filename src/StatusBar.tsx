@@ -16,10 +16,10 @@ export class StatusBar extends React.Component<StatusBarProps> {
   private static mergedProps: StatusBarProps | null = null;
 
   static pushStackEntry(props: StatusBarProps): StatusBarProps {
-    const entry = createStackEntry(props);
-    StatusBar.propsStack.push(entry);
+    // const entry = createStackEntry(props);
+    StatusBar.propsStack.push(props);
     StatusBar.updatePropsStack();
-    return entry;
+    return props;
   }
 
   static popStackEntry(entry: StatusBarProps): void {
