@@ -1,0 +1,11 @@
+[
+    {
+        "Name": "react-native-bars",
+        "License": "MIT License",
+        "License File": "https://github.com/zoontek/react-native-bars/blob/main/LICENSE",
+        "Version Number": "2.4.3",
+        "Owner" : "xiafeng@huawei.com",
+        "Upstream URL": "https://github.com/zoontek/react-native-bars",
+        "Description": " Components to control your app status and navigation bars"
+    }
+]
